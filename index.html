@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAT & DSAT 2026 Master Vocabulary | 100 High-Yield Words</title>
+  <meta name="description" content="Master 100 essential SAT and Digital SAT (DSAT 2026) vocabulary words with interactive 3D flashcards, authentic passage examples, Turkish meanings, exam trap analysis, and realistic Bluebook quiz simulator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       TOP APP HEADER
+       ========================================== -->
+  <header class="app-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <div class="brand-wrapper">
+        <div class="brand-icon">SAT</div>
+        <div class="brand-text">
+          <div class="brand-title">
+            DSAT Master Vocab
+            <span class="badge-2026">2026 Exam Ready</span>
+          </div>
+          <div class="brand-subtitle">100 High-Yield Words • Turkish Nuances & Traps</div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist" aria-label="Main Navigation">
+        <button class="nav-btn active" data-view="flashcards" role="tab" aria-selected="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></svg>
+          <span>Flashcards</span>
+        </button>
+        <button class="nav-btn" data-view="quiz" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <span>DSAT 2026 Quiz</span>
+        </button>
+        <button class="nav-btn" data-view="explorer" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Word Explorer</span>
+        </button>
+        <button class="nav-btn" data-view="strategy" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>2026 Strategy</span>
+        </button>
+      </nav>
+
+      <!-- Utilities (Theme & Stats) -->
+      <div class="header-actions">
+        <div class="stat-chip" title="Mastered Words">
+          <span>✓</span>
+          <span id="header-mastered-count">0/100</span>
+        </div>
+        <button id="shortcuts-btn" class="btn-icon" title="Keyboard Shortcuts (?)">
+          ⌨️
+        </button>
+        <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ==========================================
+           VIEW 1: INTERACTIVE 3D FLASHCARDS
+           ========================================== -->
+      <section id="view-flashcards" class="view-section active">
+        <div class="flashcard-deck-container">
+          
+          <!-- Top Deck Filter Bar -->
+          <div class="deck-controls-top">
+            <div class="filter-group">
+              <select id="fc-category-filter" class="select-input">
+                <option value="all">All Categories (100 Words)</option>
+                <option value="Argumentation & Evidence">Argumentation & Evidence</option>
+                <option value="Science & Research">Science & Research</option>
+                <option value="Rhetoric & Tone">Rhetoric & Tone</option>
+                <option value="Complexity & Nuance">Complexity & Nuance</option>
+                <option value="Power & Society">Power & Society</option>
+                <option value="Clarity & Precision">Clarity & Precision</option>
+                <option value="Quantity & Intensity">Quantity & Intensity</option>
+                <option value="Authenticity & Truth">Authenticity & Truth</option>
+                <option value="Figurative & Literary">Figurative & Literary</option>
+                <option value="Change & Permanence">Change & Permanence</option>
+              </select>
+
+              <select id="fc-difficulty-filter" class="select-input">
+                <option value="all">All Levels</option>
+                <option value="essential">Essential (Tier 2)</option>
+                <option value="hard">Hard (700+ Verbal)</option>
+                <option value="advanced">Advanced (Elite)</option>
+              </select>
+
+              <select id="fc-status-filter" class="select-input">
+                <option value="all">All Words</option>
+                <option value="mastered">Mastered Only</option>
+                <option value="review">Need Review Only</option>
+                <option value="starred">Starred Only</option>
+              </select>
+            </div>
+
+            <div class="deck-stats-mini">
+              <span id="fc-counter-pill" class="progress-pill">1 / 100</span>
+              <button id="fc-shuffle-btn" class="btn-icon" title="Shuffle Cards">🔀</button>
+            </div>
+          </div>
+
+          <!-- 3D Card Stage -->
+          <div id="flashcard-stage" class="flashcard-stage" title="Click or press SPACEBAR to flip card">
+            <div id="flashcard-inner" class="flashcard-inner">
+              
+              <!-- CARD FRONT -->
+              <div class="card-face card-front">
+                <div class="card-top-meta">
+                  <span id="fc-category-tag" class="category-tag">Argumentation & Evidence</span>
+                  <div class="badges-right">
+                    <span id="fc-diff-badge" class="difficulty-badge essential">Essential</span>
+                  </div>
+                </div>
+
+                <div class="card-center-front">
+                  <h1 id="fc-word-title" class="card-word-title">Corroborate</h1>
+                  <div class="word-meta-line">
+                    <span id="fc-pos-tag" class="pos-tag">verb</span>
+                    <span id="fc-ipa-text" class="ipa-text">/kəˈrɒb.ə.reɪt/</span>
+                    <button id="fc-audio-btn" class="audio-play-btn" title="Listen Pronunciation">🔊</button>
+                  </div>
+
+                  <div class="front-quick-meaning">
+                    <div class="tr-badge-label">Türkçe Anlamı</div>
+                    <div id="fc-tr-quick-text" class="tr-quick-text">Doğrulamak, kanıtla desteklemek, teyit etmek</div>
+                  </div>
+                </div>
+
+                <div class="card-bottom-hint">
+                  <span>💡 Press <kbd>SPACE</kbd> or click to flip for SAT 2026 context & traps</span>
+                </div>
+              </div>
+
+              <!-- CARD BACK -->
+              <div class="card-face card-back">
+                <div class="card-back-header">
+                  <div id="fc-back-word" class="card-back-word">Corroborate</div>
+                  <div id="fc-back-domain" class="card-back-domain">Science / Climatology</div>
+                </div>
+
+                <div class="card-back-body">
+                  <!-- English Definition -->
+                  <div class="info-block">
+                    <div class="block-title cyan">English Academic Definition</div>
+                    <div id="fc-definition-text" class="definition-text">To confirm, support, or give additional proof to a statement with evidence.</div>
+                  </div>
+
+                  <!-- Turkish Detailed Nuance -->
+                  <div class="info-block">
+                    <div class="block-title green">Türkçe Bağlamsal Açıklama</div>
+                    <div id="fc-tr-nuance-text" class="tr-detailed-box">
+                      SAT'de bir hipotezin bağımsız deneylerle doğrulanması senaryolarında kilit kelimedir.
+                    </div>
+                  </div>
+
+                  <!-- SAT Passage Sentence -->
+                  <div class="info-block">
+                    <div class="block-title gold">Authentic DSAT Passage Example</div>
+                    <div id="fc-example-box" class="sat-example-box">
+                      "Subsequent geological core samples obtained from the Antarctic ice shelf served to <mark>corroborate</mark> Dr. Aris's controversial hypothesis."
+                    </div>
+                  </div>
+
+                  <!-- 2026 DSAT Strategy & Traps -->
+                  <div class="info-block">
+                    <div class="block-title red">🎯 2026 DSAT Strategy & Distractor Traps</div>
+                    <div id="fc-strategy-box" class="sat-strategy-box">
+                      'Words in Context' sorularında metindeki kanıtların iddiayı güçlendirdiği bağlamlarda sorulur.
+                    </div>
+                    <div id="fc-traps-list" class="traps-list">
+                      <!-- Trap pills generated dynamically -->
+                    </div>
+                  </div>
+
+                  <!-- Synonyms -->
+                  <div class="info-block">
+                    <div class="block-title">Synonyms in Academic Context</div>
+                    <div id="fc-synonyms-list" class="synonyms-row">
+                      <!-- Synonyms generated dynamically -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Navigation & Action Controls -->
+          <div class="deck-navigation-bar">
+            <div class="deck-nav-group">
+              <button id="fc-prev-btn" class="btn-deck btn-secondary" title="Previous (Left Arrow)">
+                ← Previous
+              </button>
+              <button id="fc-next-btn" class="btn-deck btn-primary" title="Next (Right Arrow)">
+                Next Card →
+              </button>
+            </div>
+
+            <div class="deck-nav-group">
+              <button id="fc-master-btn" class="btn-status-toggle" title="Toggle Mastered (M)">
+                Mark Mastered
+              </button>
+              <button id="fc-review-btn" class="btn-status-toggle" title="Toggle Review (R)">
+                Need Review
+              </button>
+              <button id="fc-star-btn" class="btn-status-toggle" title="Toggle Star (S)">
+                ☆ Star
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 2: DSAT 2026 PRACTICE SIMULATOR (QUIZ)
+           ========================================== -->
+      <section id="view-quiz" class="view-section">
+        <div class="dsat-simulator-wrapper">
+          
+          <!-- Bluebook Testing Environment Header -->
+          <div class="dsat-bluebook-header">
+            <div class="dsat-test-title">
+              <span>Digital SAT • Reading & Writing Section</span>
+              <span class="dsat-tag-2026">2026 Module Simulator</span>
+            </div>
+            <div class="dsat-header-right">
+              <div id="quiz-streak-pill" class="stat-chip" style="background: rgba(255, 204, 0, 0.2); color: #ffcc00; border-color: rgba(255, 204, 0, 0.4);">
+                🔥 0 Streak
+              </div>
+              <div id="quiz-score-pill" class="stat-chip" style="background: rgba(255, 255, 255, 0.15); color: #fff; border-color: rgba(255, 255, 255, 0.3);">
+                Score: 0/0
+              </div>
+              <div id="quiz-timer-display" class="dsat-timer">⏱️ 1:00</div>
+            </div>
+          </div>
+
+          <!-- Question Stage -->
+          <div class="dsat-stage-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+              <span id="quiz-question-counter" class="dsat-question-counter">Question 1 of 100</span>
+              <span class="badge-2026">Words in Context</span>
+            </div>
+
+            <!-- Two Column Split (Passage vs Options) -->
+            <div class="dsat-layout-split">
+              <!-- Left: Passage Box -->
+              <div class="dsat-passage-column">
+                <div id="quiz-passage-domain" class="passage-domain-label">Science / Climatology • Words in Context</div>
+                <div id="quiz-passage-text" class="passage-body">
+                  Initial surveys suggested the newly discovered ruins dated to the Bronze Age. However, archaeologists hesitated to publish their findings until carbon dating of organic artifacts could <span class="passage-blank">[ &nbsp;?&nbsp; ]</span> the initial architectural estimations.
+                </div>
+              </div>
+
+              <!-- Right: Stem and Multiple Choice Options -->
+              <div class="dsat-question-column">
+                <div class="dsat-stem-text">
+                  Which choice completes the text with the most logical and precise word or phrase?
+                </div>
+
+                <div id="quiz-options-list" class="dsat-options-list">
+                  <!-- Options A, B, C, D generated dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Detailed Answer Rationale / Trap Breakdown -->
+            <div id="quiz-explanation-panel" class="quiz-explanation-panel">
+              <div id="quiz-explanation-header" class="explanation-header correct">
+                ✓ Correct Answer!
+              </div>
+              <div id="quiz-explanation-text" class="explanation-text">
+                The passage notes researchers waited for carbon dating to support/confirm their estimations before publishing. 'Corroborate' correctly fits the requirement of confirming with evidence.
+              </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="quiz-controls-bottom">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">
+                💡 Tip: Use keys <kbd>1</kbd>-<kbd>4</kbd> or <kbd>A</kbd>-<kbd>D</kbd> to select, <kbd>ENTER</kbd> for next.
+              </span>
+              <button id="quiz-next-btn" class="btn-deck btn-primary" disabled>
+                Next Question →
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 3: VOCABULARY EXPLORER & SEARCH
+           ========================================== -->
+      <section id="view-explorer" class="view-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2>SAT & DSAT Vocabulary Explorer</h2>
+            <p>Search all 100 high-yield words by English term, Turkish meaning, definition, or category.</p>
+          </div>
+          <div id="explorer-count-display" class="progress-pill">Showing 100 of 100 words</div>
+        </div>
+
+        <!-- Toolbar & Filter Chips -->
+        <div class="explorer-toolbar">
+          <div class="search-input-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="explorer-search-input" class="search-input" placeholder="Search by English word, Türkçe anlam, synonym (e.g., 'corroborate', 'çürütmek', 'fleeting')...">
+          </div>
+
+          <div class="filter-chips-row">
+            <div id="explorer-category-chips" class="chips-group">
+              <button class="filter-chip active" data-category="all">All (100)</button>
+              <button class="filter-chip" data-category="Argumentation & Evidence">Argumentation</button>
+              <button class="filter-chip" data-category="Science & Research">Science & Research</button>
+              <button class="filter-chip" data-category="Rhetoric & Tone">Rhetoric & Tone</button>
+              <button class="filter-chip" data-category="Complexity & Nuance">Complexity</button>
+              <button class="filter-chip" data-category="Power & Society">Power & Society</button>
+              <button class="filter-chip" data-category="Clarity & Precision">Clarity</button>
+              <button class="filter-chip" data-category="Quantity & Intensity">Quantity</button>
+              <button class="filter-chip" data-category="Authenticity & Truth">Truth & Authenticity</button>
+              <button class="filter-chip" data-category="Figurative & Literary">Literary</button>
+              <button class="filter-chip" data-category="Change & Permanence">Change</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="words-grid" class="words-grid">
+          <!-- Dynamic word cards -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           VIEW 4: 2026 STRATEGY & INSIGHTS HUB
+           ========================================== -->
+      <section id="view-strategy" class="view-section">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2>2026 DSAT Vocabulary Strategy & Turkish Learner Guide</h2>
+            <p>Expert insights on how the College Board crafts distractor traps in Digital SAT "Words in Context" questions.</p>
+          </div>
+        </div>
+
+        <div class="strategy-grid">
+          
+          <!-- Card 1: The 4 Classic Traps -->
+          <div class="strategy-card">
+            <div class="strategy-icon-title">
+              <div class="strategy-icon-box" style="background: rgba(239, 68, 68, 0.15); color: var(--danger);">🎯</div>
+              <h3>The 4 Classic DSAT Distractor Traps</h3>
+            </div>
+            <p>College Board test designers create wrong options based on systematic linguistic traps. Learn to identify them instantly:</p>
+            
+            <div class="trap-breakdown-list">
+              <div class="trap-item">
+                <div class="trap-item-title">1. The Connotation Trap (Duygu Tonu Tuzağı)</div>
+                <div class="trap-item-desc">Kelimenin sözlük anlamı doğru gibi dursa da pasajın pozitif/negatif tonuna uymaz (örn. <em>pedantic</em> vs <em>meticulous</em>).</div>
+              </div>
+              <div class="trap-item">
+                <div class="trap-item-title">2. The Secondary Definition Trap (İkincil Anlam Tuzağı)</div>
+                <div class="trap-item-desc">Kelimenin en yaygın bilinen anlamı değil, akademik metindeki ikinci/üçüncü anlamı test edilir (örn. <em>concede</em> = hak vermek, <em>subvert</em> = kalıpları yıkmak).</div>
+              </div>
+              <div class="trap-item">
+                <div class="trap-item-title">3. The Near-Synonym Register Trap (Akademik Seviye Tuzağı)</div>
+                <div class="trap-item-desc">Günlük dilde eşanlamlı sanılan iki kelimenin akademik bağlamdaki hassas ayrımı sorulur (örn. <em>mitigate</em> riskler için, <em>ameliorate</em> yaşam koşulları için).</div>
+              </div>
+              <div class="trap-item">
+                <div class="trap-item-title">4. The False Antonym / Root Trap (Kök ve Ses Benzerliği Tuzağı)</div>
+                <div class="trap-item-desc">Sadece ses veya kök benzerliği olan tamamen alakasız kelimeler çeldirici yapılır (örn. <em>spurious</em> vs <em>specious</em>, <em>disingenuous</em> vs <em>ingenious</em>).</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Tricky Word Pairs for 2026 -->
+          <div class="strategy-card">
+            <div class="strategy-icon-title">
+              <div class="strategy-icon-box" style="background: rgba(59, 130, 246, 0.15); color: var(--accent-primary);">⚡</div>
+              <h3>High-Yield SAT Word Pairs (Kritik İkililer)</h3>
+            </div>
+            <p>DSAT'de aynı soru şıklarında karşı karşıya gelen ve öğrencilerin en çok karıştırdığı ikililer:</p>
+
+            <div class="word-pair-box">
+              <div class="pair-words-heading">Corroborate vs. Substantiate</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Corroborate:</strong> Mevcut iddiaya başka bir dış kaynaktan/deneyden destek sağlamak.<br>
+                <strong>Substantiate:</strong> İddianın altını dolduracak somut delil gövdesini bizzat sunmak.
+              </div>
+            </div>
+
+            <div class="word-pair-box">
+              <div class="pair-words-heading">Mitigate vs. Ameliorate</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Mitigate:</strong> Kötü bir olayın (felaket, risk, hasar) şiddetini azaltmak.<br>
+                <strong>Ameliorate:</strong> Yetersiz bir durumu (yoksulluk, sağlık, eğitim) daha iyiye götürmek.
+              </div>
+            </div>
+
+            <div class="word-pair-box">
+              <div class="pair-words-heading">Specious vs. Spurious</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Specious:</strong> İlk bakışta doğru ve mantıklı gibi görünen ama içi çürük argüman.<br>
+                <strong>Spurious:</strong> Düpedüz sahte, uydurma veya geçersiz iddia (spurious data).
+              </div>
+            </div>
+
+            <div class="word-pair-box">
+              <div class="pair-words-heading">Ephemeral vs. Transient</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Ephemeral:</strong> Doğası gereği çok kısa ömürlü olan varlıklar (çiçekler, anlık şöhret).<br>
+                <strong>Transient:</strong> Bir yerden kısa süreliğine geçip giden anlık etkiler (sıcaklık dalgalanması).
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: False Friends for Turkish Students -->
+          <div class="strategy-card">
+            <div class="strategy-icon-title">
+              <div class="strategy-icon-box" style="background: rgba(16, 185, 129, 0.15); color: var(--success);">🇹🇷</div>
+              <h3>Türk Öğrencilerin En Sık Yaptığı 5 Hata</h3>
+            </div>
+            <p>Türkçe düşünürken SAT kelimelerinde düşülen tipik kavramsal yanılgılar:</p>
+
+            <div class="trap-breakdown-list">
+              <div class="trap-item" style="border-left-color: var(--success);">
+                <div class="trap-item-title">1. Ambivalent ≠ Duygusuz / İlgisiz</div>
+                <div class="trap-item-desc"><em>Ambivalent</em> ilgisiz demek değildir; aksine kişi o konuda çok şey hisseder ama zıt duygular (sevgi-nefret) arasında kalmıştır. İlgisiz kelimesi <em>apathetic</em>'tir.</div>
+              </div>
+              <div class="trap-item" style="border-left-color: var(--success);">
+                <div class="trap-item-title">2. Exhaustive ≠ Yorucu</div>
+                <div class="trap-item-desc"><em>Exhausting</em> yorucu demektir; <em>Exhaustive</em> ise 'her şeyi kapsayan, eksiksiz ve derinlemesine araştırma' (comprehensive study) demektir.</div>
+              </div>
+              <div class="trap-item" style="border-left-color: var(--success);">
+                <div class="trap-item-title">3. Pedantic ≠ Meticulous</div>
+                <div class="trap-item-desc"><em>Meticulous</em> övgü dolu bir titizliktir. <em>Pedantic</em> ise önemsiz kural ve detaylara takılıp ana fikri kaçıran antipatik bilgiçliktir.</div>
+              </div>
+              <div class="trap-item" style="border-left-color: var(--success);">
+                <div class="trap-item-title">4. Dispassionate ≠ Merhametsiz</div>
+                <div class="trap-item-desc"><em>Dispassionate</em> duygusuz veya zalim demek değildir; bir bilim insanı veya hakimin 'tamamen tarafsız, objektif ve soğukkanlı' olmasıdır.</div>
+              </div>
+              <div class="trap-item" style="border-left-color: var(--success);">
+                <div class="trap-item-title">5. Belie = Dış Görünüşün İç Gerçeği Gizlemesi</div>
+                <div class="trap-item-desc"><em>His smile belied his anxiety</em> = Gülümsemesi, içindeki kaygıyı gizliyordu / yalanlıyordu. Dış görünüş ile iç durum arasındaki tezatı kurar.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================
+       MODAL 1: FULL WORD DOSSIER
+       ========================================== -->
+  <div id="word-detail-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-word-heading">
+    <div class="modal-card">
+      <button id="word-detail-modal-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div id="word-detail-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: KEYBOARD SHORTCUTS
+       ========================================== -->
+  <div id="shortcuts-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="shortcuts-heading">
+    <div class="modal-card" style="max-width: 500px;">
+      <button id="shortcuts-modal-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <h3 id="shortcuts-heading" style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem;">⌨️ Keyboard Shortcuts</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Use rapid keyboard controls to master your vocabulary deck.</p>
+
+      <table class="shortcut-table">
+        <tr>
+          <td><kbd>SPACE</kbd></td>
+          <td>Flip Active Flashcard (Ön / Arka Yüz)</td>
+        </tr>
+        <tr>
+          <td><kbd>→</kbd> / <kbd>←</kbd></td>
+          <td>Next / Previous Flashcard</td>
+        </tr>
+        <tr>
+          <td><kbd>M</kbd></td>
+          <td>Toggle "Mastered" Status</td>
+        </tr>
+        <tr>
+          <td><kbd>R</kbd></td>
+          <td>Toggle "Need Review" Status</td>
+        </tr>
+        <tr>
+          <td><kbd>S</kbd></td>
+          <td>Toggle "Star" Favorite</td>
+        </tr>
+        <tr>
+          <td><kbd>P</kbd></td>
+          <td>Pronounce Word Audio</td>
+        </tr>
+        <tr>
+          <td><kbd>1</kbd> - <kbd>4</kbd> / <kbd>A</kbd> - <kbd>D</kbd></td>
+          <td>Select Quiz Option A, B, C, or D</td>
+        </tr>
+        <tr>
+          <td><kbd>ENTER</kbd></td>
+          <td>Next Quiz Question</td>
+        </tr>
+        <tr>
+          <td><kbd>?</kbd></td>
+          <td>Open Shortcuts Helper</td>
+        </tr>
+        <tr>
+          <td><kbd>ESC</kbd></td>
+          <td>Close Modal Dialogs</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="app-footer">
+    <div class="container footer-content">
+      <div><strong>SAT & DSAT 2026 Master Vocabulary</strong> • Designed for 750+ Verbal Mastery</div>
+      <div>Curated for Digital SAT Reading & Writing (Craft & Structure, Information & Ideas) • 100 High-Yield Vocabulary Terms</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/words-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
